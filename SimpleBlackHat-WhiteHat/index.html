@@ -11,11 +11,31 @@
 </head>
 
 <body>
-    <div class = "flex">
-    <div id="blackhat"></div>
-    <script src="blackhat.js"></script>
-    <div id = "whitehat"></div>
-    <script src = "whitehat.js"></script>
+    <div class="container" style="display: flex; height: 100px">
+        <div style="width: 50%">
+            <div id="blackhat">
+                <h3 style="font-size: 25px">Black-Hat
+
+                </h3>
+                <p>
+                    This visulaization is bad because the y axis does not start with zero, which will mislead the
+                    auidence when they try to judge the proportions. In addition, the title of the chart is not specific
+                    in the data as there is no year sspecified
+                </p>
+            </div>
+        </div>
+        <script src="blackhat.js"></script>
+        <div style="flex-grow: 1;">
+            <div id="whitehat">
+                <h3 style="font-size: 25px">White-Hat</h3>
+                <p>
+                    This visualizaton addresses the erros in the chart on the left. It makes sure the scale starts
+                    at zero and gets rid of the unnecessary color scale. In addition the chart has a more specific
+                    title. Moreover, the bars have labels that will specify the amount for the bar.
+                </p>
+            </div>
+            <script src="whitehat.js"></script>
+        </div>
     </div>
 </body>
 

@@ -35,35 +35,6 @@ function main(){
         }));
         yScale.domain([500, 4000]);
 
-
-        const tooltip = d3.select("#blackhat")
-            .append("div")
-            .style("opacity",0)
-            .attr("class","tooltip")
-            .attr("position","absolute")
-            .style("background-color","white")
-            .style("border","solid")
-            .style("width","5%")
-            .style("border-width",50)
-            .style("border-radius",5)
-            .style("padding","5px")
-
-        let mouseover = function(d) {
-            tooltip
-                .style("opacity",1)
-            d3.select(this)
-                .style("stroke","black")
-                .style("opacity",1)
-        }
-
-        let mouseleave = function(d){
-            tooltip
-                .style("opacity",0)
-            d3.select(this)
-                .style("stroke","none")
-                .style("opacity", 1)
-        }
-
         // Draw bars!
         container_g.selectAll(".bar")
             .data(data)
@@ -86,15 +57,6 @@ function main(){
                     return "purple"
                 }
             })
-            .on("mouseover",mouseover)
-            .on("mousemove",(Event,d)=>{
-                tooltip
-                    .html("Sales $" + d.Delays)
-                    .style("left", (Event.x)/2-100+"px")
-                    .style("top",(Event.y)/2 + "px")
-                    .style("font-family","sans-serif")
-            })
-            .on("mouseleave",mouseleave)
 
 
         // Display the X-axis
@@ -122,6 +84,7 @@ function main(){
             .attr("dy", "-4.1em")
             .attr("stroke", "black")
             .text("Delays");
+            
     })
 }
 main();
